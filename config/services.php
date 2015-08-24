@@ -23,6 +23,12 @@ return [
         'secret' => '',
     ],
 
+    'facebook' => [
+        'client_id' => '1605569146364023',
+        'client_secret' => '623cf925d928fa0fcb7de0a0dd4d3586',
+        'redirect' => 'http://singular.mx/facebook/callback',
+    ],
+
     'ses' => [
         'key'    => '',
         'secret' => '',
