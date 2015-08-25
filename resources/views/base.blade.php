@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> Singular</title>
-	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon-16x16.png') }}">
+	<title> ngular </title>
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.css') }}">
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">S1ngular</a>
+				<a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" width="100px" /></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -30,8 +30,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/login') }}">Login</a></li>
-						<li><a href="{{ url('/register') }}">Register</a></li>
+						<li><a href="{{ route('login') }}">Login</a></li>
+						<li><a href="{{ route('register') }}">Registro</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>

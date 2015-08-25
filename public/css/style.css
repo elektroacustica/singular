@@ -9,6 +9,10 @@ i{
 	background: #1fbcec;
 	color: white;
 }
+.btn-singular{
+	background: #bc361e;
+	color: white;
+}
 .container{
 	padding-top: 3em;
 }
@@ -29,6 +33,18 @@ i{
 }
 .social{
 	margin: .5em 0 1.5em 0;
+}
+.social-text{
+	margin: 0;
+	padding: 1em;
+}
+.social-text:after{
+	content: "*";
+	color: red;
+}
+.social-text:before{
+	content: "";
+	color: red;
 }
 #banner{
 	width: 100%;
