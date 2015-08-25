@@ -18,6 +18,15 @@
 						</div>
 					@endif
 
+					<section class="social text-center">
+						<a href="{{ route('provider', 'facebook') }}" class="btn btn-facebook btn-block"><i class="fa fa-facebook">
+							</i>Login with  Facebook
+						</a>
+						<a href="{{ route('provider', 'twitter') }}" class="btn btn-twitter btn-block"><i class="fa fa-twitter">
+							</i>Login with twitter
+						</a>
+					</section>
+
 					<form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Socialite;
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -58,15 +59,26 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'      => $data['name'],
+            'email'     => $data['email'],
+            'password'  => bcrypt($data['password']),
+            'role'      => 'user',
         ]);
     }
 
-    public function redirectToProvider()
+    public function loginPath()
     {
-        return Socialite::driver('facebook')->redirect();
+        return route('login');
+    }
+
+    public function redirectToProvider($provider)
+    {
+        if ($provider == 'facebook') {
+            return Socialite::driver('facebook')->redirect();
+        }
+        elseif ($provider == 'twitter') {
+            return Socialite::driver('twitter')->redirect();
+        }
     }
 
     /**
@@ -74,20 +86,61 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver('facebook')->user();
+        if ($provider == 'facebook') {
 
-        // OAuth Two Providers
-        $token = $user->token;
+            $user = Socialite::driver('facebook')->user();
 
-        // All Providers
-        $user->getId();
-        $user->getNickname();
-        $user->getName();
-        $user->getEmail();
-        $user->getAvatar();
+            $q = User::where('email', $user->email)->first();
 
-        dd($user);
+            if ($q) {
+                \Auth::login($q);
+            }
+
+            else{
+                $r = new User();
+                $r->name = $user->getName();
+                $r->email = $user->getEmail();
+                $r->password = $user->token;
+                $r->avatar = $user->getAvatar();
+                $r->role = 'editor';
+
+                $r->save();
+
+                \Auth::login($r);
+            }
+
+            return redirect('/');
+            
+        }
+        elseif ($provider == 'twitter') {
+
+            $user = Socialite::driver('twitter')->user();
+
+            $q = User::where('password', $user->token)->first();
+
+            // dd($user);
+
+            if ($q) {
+                \Auth::login($q);
+            }
+
+            else{
+                $r = new User();
+                $r->name = $user->getName();
+                $r->email = str_random(60);;
+                $r->password = $user->token;
+                $r->avatar = $user->getAvatar();
+                $r->role = 'editor';
+
+                $r->save();
+
+                \Auth::login($r);
+
+            }
+            return redirect('/');
+        }
     }
+
 }

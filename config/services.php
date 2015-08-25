@@ -29,6 +29,12 @@ return [
         'redirect' => 'http://singular.mx/facebook/callback',
     ],
 
+    'twitter' => [
+        'client_id' => '3pvybVevxW2uQbHMnv7QEdMXe',
+        'client_secret' => 'gTc85TJxWqUFOOGh22NziU7vC7qcwkHLQpXlGk0T4b8CnRQJf9',
+        'redirect' => 'http://singular.mx/twitter/callback',
+    ],
+
     'ses' => [
         'key'    => '',
         'secret' => '',
