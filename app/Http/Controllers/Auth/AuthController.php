@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use Socialite;
-use App\User;
 use Validator;
+use Singular\Entities\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -111,7 +111,7 @@ class AuthController extends Controller
                 \Auth::login($r);
             }
 
-            return redirect('/');
+            return redirect()->route('cuestionario');
             
         }
         elseif ($provider == 'twitter') {
@@ -139,7 +139,7 @@ class AuthController extends Controller
                 \Auth::login($r);
 
             }
-            return redirect('/');
+            return redirect()->route('cuestionario');
         }
     }
 

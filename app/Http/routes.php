@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require 'routes/home.php';
 
 // Authentication routes...
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'login']);
@@ -34,7 +32,5 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('{provider}', ['uses' => 'Auth\AuthController@redirectToProvider', 'as' => 'provider']);
 Route::get('{provider}/callback', 'Auth\AuthController@handleProviderCallback');
-
-Route::get('twitter-email-{r}', ['uses' => 'Auth\AuthController@twitter', 'as' => 'twitter-email']);
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Singular\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +16,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * The database table used by the model.
      *
      * @var string
-     *
      */
     protected $table = 'users';
 
@@ -24,7 +23,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * The attributes that are mass assignable.
      *
      * @var array
-     *
      */
     protected $fillable = ['name', 'email', 'password', 'avatar'];
 
@@ -32,8 +30,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * The attributes excluded from the model's JSON form.
      *
      * @var array
-     *
      */
     protected $hidden = ['password', 'remember_token'];
 }
-

@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> ngular </title>
+	<title> ngular</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.css') }}">
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -45,19 +45,13 @@
 		</div>
 	</nav>
 
-	{{-- <img src="{{ Auth::user()->avatar }}" class="img-circle img-avatar" /> --}}
 	@yield('content')
 
 	<!-- Scripts -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script>
-		$('#myModal').on('shown.bs.modal', function () {
-		  $('#myInput').focus()
-		})
-	</script>
 	<footer>
-		{{-- creditos <a href="http://www.freepik.com">Designed by Freepik</a> --}}
+		<!-- creditos <a href="http://www.freepik.com">Designed by Freepik</a> -->
 	</footer>
 </body>
 </html>
