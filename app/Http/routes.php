@@ -12,6 +12,7 @@
 */
 
 require 'routes/home.php';
+require 'routes/user_profile.php';
 
 // Authentication routes...
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'login']);

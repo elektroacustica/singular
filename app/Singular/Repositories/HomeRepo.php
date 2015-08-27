@@ -10,4 +10,9 @@ class HomeRepo{
 	{
 		return User::take($value)->get();
 	}
+
+	public function find($value)
+	{
+		return User::find($value);
+	}
 }

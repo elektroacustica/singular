@@ -21,11 +21,14 @@ i{
 	opacity: .7;
 	color: white;
 }
+figure{
+	box-shadow: .3em .3em 0 gray;
+}
 .container{
 	margin-top: 8em;
 }
 .img-avatar{
-	width: 50px;
+	width: 100px;
 	vertical-align: middle;
 	transition: all .4s;
 }
