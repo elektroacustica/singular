@@ -1,5 +1,7 @@
 <?php
 
+namespace Singular\Managers;
+
 abstract class BaseManager
 {
 	protected $entity;
@@ -12,15 +14,15 @@ abstract class BaseManager
 		$this->data = array_only($data, array_keys($this->getRules()));
 	}
 
-	abstract public getRules();
+	abstract public function getRules();
 
 	public function isValid()
 	{
 		$rules = $this->getRules();
 
-		$validation = \Validator::make($this->data, $rules)
+		$validation = \Validator::make($this->data, $rules);
 
-		$isValid = $validation->passess();
+		$isValid = $validation->passes();
 
 		$this->error = $validation->messages();
 

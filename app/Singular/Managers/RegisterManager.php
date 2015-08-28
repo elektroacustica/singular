@@ -11,11 +11,7 @@ class RegisterManager extends BaseManager
 
 	public function getRules()
 	{
-		$rules = [
-			'id' => 'required'
-		];
 
-		return $rules;
 	}
 	
 	public function like()

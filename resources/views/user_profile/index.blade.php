@@ -13,7 +13,10 @@
 				<div class="component-panel">
 					<i class="fa fa-undo text-warning fa-2x"></i>
 					<i class="fa fa-arrow-circle-o-down fa-5x text-danger"></i>
-					<i class="fa fa-heart text-info fa-5x"></i>
+					<a href="{{ route('like', [1,3]) }}">
+						<i class="fa fa-heart text-info fa-5x"></i>
+					</a>
+
 					<i class="fa fa-chevron-circle-right fa-2x text-primary"></i>
 				</div>
 
