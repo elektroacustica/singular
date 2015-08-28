@@ -1,3 +1,10 @@
+button{
+	border:none;
+	background: none;
+}
+form{
+	display: inline-block;
+}
 i{
 	margin-right: .5em;
 }

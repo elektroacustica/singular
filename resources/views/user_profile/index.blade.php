@@ -7,15 +7,22 @@
 		<div class="col-md-8 col-md-offset-2 text-center">
 			@foreach ($person as $d)
 			<figure class="thumbnail">
-				<img src="{{ $d->avatar }}" class="img-avatar img-circle" width="" />
+				<img src="{{ $d->avatar }}" class="img-avatar img-circle" />
 				<figcaption>{{ $d->name }}</figcaption>
 				
 				<div class="component-panel">
 					<i class="fa fa-undo text-warning fa-2x"></i>
 					<i class="fa fa-arrow-circle-o-down fa-5x text-danger"></i>
-					<a href="{{ route('like', [1,3]) }}">
-						<i class="fa fa-heart text-info fa-5x"></i>
-					</a>
+
+					{!! Form::open(['route' => 'like']) !!}
+						{!! Form::hidden('user_id', Auth::user()->id) !!}
+						{!! Form::hidden('candidato', $d->id) !!}
+						<button>
+							<i class="fa fa-heart text-info fa-5x"></i>
+						</button>
+					{!! Form::close() !!}
+
+
 
 					<i class="fa fa-chevron-circle-right fa-2x text-primary"></i>
 				</div>

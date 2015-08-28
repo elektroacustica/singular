@@ -25,7 +25,7 @@ class LikeController extends Controller
     {
         $like = $this->likeRepo->newLike();
 
-        $manager = new LikeManager($like, Request::all());
+        $manager = new LikeManager($like, Input::all());
 
         if($manager->save())
         {

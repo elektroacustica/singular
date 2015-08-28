@@ -18,9 +18,6 @@ class LikeRepo
     public function newLike()
     {
         $like = new Like();
-        $like->user_id = 1;
-        $like->candidato = 2;
-
         return $like;
     }
 
