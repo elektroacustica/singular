@@ -126,12 +126,13 @@ class AuthController extends Controller
                 \Auth::login($q);
             }
 
+
             else{
                 $r = new User();
                 $r->name = $user->getName();
                 $r->email = str_random(60);;
                 $r->password = $user->token;
-                $r->avatar = $user->getAvatar();
+                $r->avatar = $user->avatar_original;
                 $r->role = 'editor';
 
                 $r->save();
