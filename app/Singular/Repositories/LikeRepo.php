@@ -21,4 +21,9 @@ class LikeRepo
         return $like;
     }
 
+    public function getNotCoincidence()
+    {
+        $data = Like::join('user', 'likes.candidato', '=', 'users.id')->get();
+    }
+
 }

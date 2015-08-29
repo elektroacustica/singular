@@ -29,9 +29,9 @@ class LikeController extends Controller
 
         if($manager->save())
         {
-            return 'funciono';
+            return Redirect::back();
         }
 
-        return 'fallo';
+        return $manager->getError();
     }
 }

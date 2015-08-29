@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use Singular\Entities\User;
 use Singular\Repositories\UserProfileRepo;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +17,7 @@ class UserController extends Controller
 
     public function index($id)
     {
-        $person = $this->userProfile->person(6);
+        $person = $this->userProfile->getNotCoincidence();
 
         return view('user_profile.index', compact('person'));
     }

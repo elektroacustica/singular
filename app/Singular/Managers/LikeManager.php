@@ -12,6 +12,8 @@ class LikeManager extends BaseManager{
         ];
 
         return $rules;
+
+        // select users.id, name from users left join likes on users.id = likes.candidato where likes.user_id is null;
     }
 
 }
