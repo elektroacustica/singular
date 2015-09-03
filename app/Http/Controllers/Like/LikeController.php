@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Singular\Entities\Compatibility;
 use Singular\Managers\LikeManager;
 use Singular\Repositories\LikeRepo;
 
@@ -33,5 +34,11 @@ class LikeController extends Controller
         }
 
         return $manager->getError();
+    }
+
+    public function lista()
+    {
+        $lista = $this->likeRepo->lista();
+        return view('compatibility.lista', compact('lista'));
     }
 }

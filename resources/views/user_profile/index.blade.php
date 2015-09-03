@@ -11,8 +11,14 @@
 				<figcaption>{{ $d->name }}</figcaption>
 				
 				<div class="component-panel">
-					<i class="fa fa-undo text-warning fa-2x"></i>
-					<i class="fa fa-arrow-circle-o-down fa-5x text-danger"></i>
+
+                    {!! Form::open(['route' => 'dislike']) !!}
+                    {!! Form::hidden('user_id', Auth::user()->id) !!}
+                    {!! Form::hidden('candidato', $d->id) !!}
+                    <button>
+                        <i class="fa fa-arrow-circle-o-down fa-5x text-danger"></i>
+                    </button>
+                    {!! Form::close() !!}
 
 					{!! Form::open(['route' => 'like']) !!}
 						{!! Form::hidden('user_id', Auth::user()->id) !!}
@@ -22,9 +28,6 @@
 						</button>
 					{!! Form::close() !!}
 
-
-
-					<i class="fa fa-chevron-circle-right fa-2x text-primary"></i>
 				</div>
 
 			</figure>

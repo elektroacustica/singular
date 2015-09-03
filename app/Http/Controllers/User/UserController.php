@@ -27,4 +27,9 @@ class UserController extends Controller
         return view('user.cuestionario');
     }
 
+    public function config()
+    {
+        return view('user.configuracion');
+    }
+
 }

@@ -5,7 +5,7 @@
 <section id="banner">
     <article class="container">
     	<div class="row">
-        <h1 class="text-center thumbnail">The social network for meeting new people</h1>
+        <h1 class="text-center">The social network for meeting new people</h1>
             <div class="col-md-4 tex-center">
                 <img src="{{ asset('img/heart.png') }}" class="img-responsive" />
             </div>

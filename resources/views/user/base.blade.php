@@ -25,6 +25,11 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="">
+							<img src="{{ Auth::user()->avatar }}" class="img-avatar-xl img-circle">
+						</a>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tour <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
@@ -36,7 +41,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="">
+						<a href="{{ route('like.list') }}">
 							<i class="fa fa-male fa-lg"></i><i class="fa fa-female fa-lg"></i>
 						</a>
 					</li>
@@ -48,7 +53,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href=""><i class="fa fa-cog"></i> configurar</a></li>
+							<li><a href="{{ route('user.config') }}"><i class="fa fa-cog"></i> configurar</a></li>
 							<li><a href="{{ url('/logout') }}"> <i class="fa fa-sign-out"></i> salir</a></li>
 						</ul>
 					</li>

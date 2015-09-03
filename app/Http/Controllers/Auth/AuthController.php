@@ -75,7 +75,8 @@ class AuthController extends Controller
     public function redirectToProvider($provider)
     {
         if ($provider == 'facebook') {
-            return Socialite::driver('facebook')->redirect();
+            return Socialite::driver('facebook')
+                ->redirect();
         }
         elseif ($provider == 'twitter') {
             return Socialite::driver('twitter')->redirect();
@@ -103,6 +104,7 @@ class AuthController extends Controller
                 $r = new User();
                 $r->name = $user->getName();
                 $r->email = $user->getEmail();
+                $r->genero = $user->user['gender'];
                 $r->password = $user->token;
                 $r->avatar = $user->getAvatar();
                 $r->role = 'editor';

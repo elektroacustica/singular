@@ -24,8 +24,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '1605569146364023',
-        'client_secret' => '623cf925d928fa0fcb7de0a0dd4d3586',
+        'client_id' => '1457610061233946',
+        'client_secret' => '94649fd6c605b2842607209993642ad7',
+        'default_graph_version' => 'v2.2',
         'redirect' => 'http://singular.mx/facebook/callback',
     ],
 

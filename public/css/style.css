@@ -31,6 +31,10 @@ i{
 	opacity: .7;
 	color: white;
 }
+.component-form{
+    width: 100%;
+    background: darkmagenta;
+}
 figure{
 	box-shadow: .3em .3em 0 gray;
 }
@@ -41,6 +45,11 @@ figure{
 	width: 400px;
 	vertical-align: middle;
 	transition: all .4s;
+}
+.img-avatar-xl{
+    width: 30px;
+    margin: 0;
+    padding: 0;
 }
 .img-home{
 	margin-bottom: .5em;
@@ -58,6 +67,10 @@ figure{
 .img-avatar:hover{
 	opacity: .6;
 }
+.media{
+	background: #fefefe;
+	box-shadow: 1px 1px 1px gray;
+}
 .navbar{
 	border-radius: 0;
 	margin-bottom: 0;
@@ -71,13 +84,5 @@ figure{
 .social-text{
 	margin: 0;
 	padding: 1em;
-}
-.social-text:after{
-	content: "*";
-	color: red;
-}
-.social-text:before{
-	content: "";
-	color: red;
 }
 

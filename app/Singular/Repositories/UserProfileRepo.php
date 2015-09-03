@@ -15,10 +15,10 @@ class UserProfileRepo{
 	{
 		$data = \DB::select('
 			select users.id as id, avatar, name from users
-			left join likes
-				on users.id = likes.candidato
-			where likes.user_id is null
-			and users.id <> ?
+			left join compatibilities
+				on users.id = compatibilities.candidato
+			where compatibilities.user_id is null
+			and users.id <> ? limit 3
 		', [\Auth::user()->id]);
 
 		return $data;

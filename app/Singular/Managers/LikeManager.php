@@ -7,7 +7,7 @@ class LikeManager extends BaseManager{
     public function getRules()
     {
         $rules = [
-            'user_id'   => 'required|unique_with:likes,candidato',
+            'user_id'   => 'required|unique_with:compatibilities,candidato',
             'candidato' => 'required',
         ];
 

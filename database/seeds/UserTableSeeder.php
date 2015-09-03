@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Singular\Entities\User;
+use Singular\Entities\Profile;
+use Singular\Entities\Configuration;
 
 class UserTableSeeder extends Seeder
 {
@@ -12,6 +14,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 40)->create();
+        factory(User::class, 30)->create();
+        factory(Profile::class, 3)->create();
+        factory(Configuration::class, 9)->create();
     }
 }
