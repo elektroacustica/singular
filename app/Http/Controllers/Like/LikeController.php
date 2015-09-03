@@ -41,4 +41,5 @@ class LikeController extends Controller
         $lista = $this->likeRepo->lista();
         return view('compatibility.lista', compact('lista'));
     }
+
 }

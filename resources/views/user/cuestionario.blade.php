@@ -45,7 +45,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<a href="{{ route('profile', 1) }}" class="btn btn-info">Continuar</a>
+								<a href="{{ route('profile', Auth::user()->name) }}" class="btn btn-info">Continuar</a>
 								
 							</div>
 						</div>

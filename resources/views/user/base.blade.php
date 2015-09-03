@@ -7,6 +7,7 @@
 	<title> ngular</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/vendor/animate.css') }}">
 	@yield('link')
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
@@ -20,18 +21,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" width="100px" /></a>
+				<a class="navbar-brand" href="{{ route('profile', \Auth::user()->name) }}"><img src="{{ asset('img/logo.png') }}" width="100px" /></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="">
-							<img src="{{ Auth::user()->avatar }}" class="img-avatar-xl img-circle">
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tour <span class="caret"></span></a>
+					<!--<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tour <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href=""><i class="fa fa-heart"></i> ligue</a></li>
 							<li><a href="{{ url('/logout') }}"> <i class="fa fa-thumbs-o-up"></i> VIP</a></li>
@@ -40,13 +36,14 @@
 							<li><a href=""><i class="fa fa-heart"></i> links</a></li>
 						</ul>
 					</li>
+					-->
 					<li>
 						<a href="{{ route('like.list') }}">
 							<i class="fa fa-male fa-lg"></i><i class="fa fa-female fa-lg"></i>
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="{{ route('chat.index') }}">
 							<i class="fa fa-weixin fa-lg"></i> chat
 						</a>
 					</li>

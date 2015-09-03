@@ -14,6 +14,7 @@
 require 'routes/home.php';
 require 'routes/user_profile.php';
 require 'routes/like.php';
+require 'routes/chat.php';
 
 // Authentication routes...
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'login']);

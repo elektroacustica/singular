@@ -9,6 +9,7 @@ class LikeManager extends BaseManager{
         $rules = [
             'user_id'   => 'required|unique_with:compatibilities,candidato',
             'candidato' => 'required',
+            'compatibility' => 'required | boolean'
         ];
 
         return $rules;

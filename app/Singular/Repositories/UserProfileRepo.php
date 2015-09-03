@@ -17,9 +17,19 @@ class UserProfileRepo{
 			select users.id as id, avatar, name from users
 			left join compatibilities
 				on users.id = compatibilities.candidato
+
 			where compatibilities.user_id is null
-			and users.id <> ? limit 3
+			and users.id <> ?
+			and genero = "mujer"
+			ORDER BY rand() LIMIT 1
 		', [\Auth::user()->id]);
+
+
+		$q = \DB::select('SELECT * FROM users
+			WHERE id <> ?
+			AND genero = "hombre"
+			ORDER BY rand() LIMIT 1', [\Auth::user()->id]);
+
 
 		return $data;
 	}

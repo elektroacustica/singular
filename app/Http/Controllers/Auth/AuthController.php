@@ -67,6 +67,10 @@ class AuthController extends Controller
         ]);
     }
 
+    public function redirectPath()
+    {
+        return route('profile', \Auth::user()->name);
+    }
     public function loginPath()
     {
         return route('login');
@@ -108,7 +112,12 @@ class AuthController extends Controller
                 $r->password = $user->token;
                 $r->avatar = $user->getAvatar();
                 $r->role = 'editor';
-
+                if($r->genero == 'male'){
+                    $r->genero = 'hombre';
+                }
+                else{
+                    $r->genero = 'mujer';
+                }
                 $r->save();
 
                 \Auth::login($r);

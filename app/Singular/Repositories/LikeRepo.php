@@ -30,13 +30,18 @@ class LikeRepo
     public function lista()
     {
         $list = Compatibility::join('users', 'users.id', '=', 'compatibilities.candidato')
-            ->select('name','local', 'avatar')
+            ->select('users.id as id', 'name','local', 'avatar')
             ->where('user_id', \Auth::user()->id)
+            ->where('compatibility', true)
             ->get();
 
         return $list;
 
     }
 
+    public function findChat($value)
+    {
+        return User::find($value);
+    }
 
 }

@@ -78,6 +78,9 @@ figure{
 .panel{
 	margin-top: 3em;
 }
+.slow{
+	animation-delay: 1s;
+}
 .social{
 	margin: .5em 0 1.5em 0;
 }

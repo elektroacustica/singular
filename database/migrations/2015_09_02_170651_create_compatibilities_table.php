@@ -23,6 +23,7 @@ class CreateCompatibilitiesTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->boolean('compatibility');
         });
     }
 
