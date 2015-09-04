@@ -118,6 +118,8 @@ class AuthController extends Controller
 
                 $p = new Profile();
 
+                $p->user_id     = $r->id;
+
                 if($r->genero == 'mujer'){
                     $p->interes = 'hombre';
                 }
