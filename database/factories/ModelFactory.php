@@ -31,6 +31,7 @@ $factory->define(Singular\Entities\Profile::class, function ($faker) {
         'interes'     => 'hombre',
         'edad_min'    => 18,
         'edad_max'    => 24,
+        'fecha_nacimiento'  => $faker->date($format = 'Y-m-d', $max = '1993'),
         'educacion'   => 'maestria'
     ];
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Redirect;
 use Socialite;
 use Validator;
 use Singular\Entities\User;
@@ -69,11 +70,11 @@ class AuthController extends Controller
 
     public function redirectPath()
     {
-        return route('configuracion');
+        return route('login');
     }
     public function loginPath()
     {
-        return route('user.profile');
+        return Redirect::route('user.config');
     }
 
     public function redirectToProvider($provider)
@@ -123,7 +124,7 @@ class AuthController extends Controller
                 \Auth::login($r);
             }
 
-            return route('user.profile');
+            return Redirect::route('user.config');
             
         }
         elseif ($provider == 'twitter') {
@@ -152,7 +153,7 @@ class AuthController extends Controller
                 \Auth::login($r);
 
             }
-            return route('user.profile');
+            return Redirect::route('user.config');
         }
     }
 

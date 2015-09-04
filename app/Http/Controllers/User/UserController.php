@@ -32,4 +32,9 @@ class UserController extends Controller
         return view('user.configuracion');
     }
 
+    public function save()
+    {
+
+    }
+
 }

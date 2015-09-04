@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->integer('edad_max');
             $table->integer('educacion');
             $table->integer('descripcion');
+            $table->date('fecha_nacimiento');
             $table->enum('interes', ['hombre', 'mujer', 'ambos']);
             $table->timestamps();
         });

@@ -10,7 +10,7 @@
                         Configuracion
                     </div>
                     <div class="panel-body">
-                        {!! Form::open(['route' => 'like']) !!}
+                        {!! Form::open(['route' => 'user.config']) !!}
                             <strong>INTERES</strong>
                             <section class="text-center">
                                 <div class="form-group display-inline">
@@ -61,6 +61,10 @@
                                     <textarea></textarea>
                                 </div>
                             </section>
+                            <strong>FECHA DE NACIMIENTO</strong>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="1992/04/12" required/>
+                                </div>
                                 <div class="form-group">
                                     <button class="btn btn-info">Guardar</button>
                                 </div>
