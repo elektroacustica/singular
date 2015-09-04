@@ -12,6 +12,6 @@ class Profile extends Model
         'user_id', 'interes',
         'edad_min','edad_max',
         'estidios', 'descripcion',
-        'fecha_nacimiento'
+        'fecha_nacimiento', 'educacion'
     ];
 }
