@@ -33,8 +33,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function compatibilities()
+    public function profile()
     {
-        return $this->hasMany('Singular\Entities\Compatibility');
+        return $this->hasOne('Singular\Entities\Profile');
     }
 }

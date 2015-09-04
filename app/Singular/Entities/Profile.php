@@ -14,4 +14,9 @@ class Profile extends Model
         'estidios', 'descripcion',
         'fecha_nacimiento', 'educacion'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('Singular\Entities\User');
+    }
 }
