@@ -71,7 +71,7 @@ class AuthController extends Controller
 
     public function redirectPath()
     {
-        return route('home');
+        return route('user.compras');
     }
     public function loginPath()
     {
@@ -133,7 +133,7 @@ class AuthController extends Controller
                 \Auth::login($r);
             }
 
-            return Redirect::route('user.config');
+            return Redirect::route('user.compras');
             
         }
         elseif ($provider == 'twitter') {
@@ -175,7 +175,7 @@ class AuthController extends Controller
                 \Auth::login($r);
 
             }
-            return Redirect::route('user.config');
+            return Redirect::route('user.compras');
         }
     }
 

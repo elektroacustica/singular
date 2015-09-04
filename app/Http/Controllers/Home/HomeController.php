@@ -19,5 +19,10 @@ class HomeController extends Controller{
 		$user = $this->homeRepo->take(6);
 		return view('welcome', compact('user'));
 	}
+
+	public function compras()
+	{
+		return view('user.compras');
+	}
 	
 }

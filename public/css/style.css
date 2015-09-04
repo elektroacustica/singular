@@ -24,6 +24,49 @@ textarea:focus{
 strong{
 	margin-bottom: 2em;
 }
+.app-btn1{
+	background-color: white;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid black;
+}
+.app-btn2{
+	background-color: #0080d6;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: white;
+}
+.app-contenedor{
+	padding-top: 20px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+.app-lista1{
+	background-color: #323232;
+	color: white;
+	text-align: center;
+}
+.app-lista1 h2, .app-lista2 h2{
+	color: white;
+	font-size: 30px;
+}
+.app-lista2{
+	background-color: #0080d6;
+	color: white;
+	text-align: center;
+}
+.app-pago{
+	font-weight: bold;
+	margin-right: 30px;
+}
+.app-precio{
+	text-align: center;
+}
+.app-separador2{
+	width: 100px;
+	border-bottom: 1px solid #0080d6;
+	margin: 20px auto;
+}
 .btn-facebook{
 background: #293d69;
 color: white;
