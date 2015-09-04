@@ -75,7 +75,7 @@ class AuthController extends Controller
     }
     public function loginPath()
     {
-        return Redirect::route('user.config');
+        return Redirect::route('home');
     }
 
     public function redirectToProvider($provider)
