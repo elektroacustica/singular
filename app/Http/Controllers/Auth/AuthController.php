@@ -71,7 +71,7 @@ class AuthController extends Controller
 
     public function redirectPath()
     {
-        return route('login');
+        return route('home');
     }
     public function loginPath()
     {
