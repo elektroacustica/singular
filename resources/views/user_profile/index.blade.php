@@ -8,10 +8,14 @@
 			@foreach ($person as $d)
 			<figure class="thumbnail animated fadeIn slow">
 				<img src="{{ $d->avatar }}" class="img-avatar img-circle" />
-				<figcaption>{{ $d->name }}</figcaption>
+				<figcaption>
+					{{ $d->name }}
+					<p>
+						{{ rand(0, 12) }} amigos en común <i class="fa fa-facebook text-primary"></i>
+					</p>
+				</figcaption>
 				
 				<div class="component-panel animated slideInUp slow">
-
                     {!! Form::open(['route' => 'like']) !!}
 						{!! Form::hidden('user_id', Auth::user()->id) !!}
 						{!! Form::hidden('candidato', $d->id) !!}

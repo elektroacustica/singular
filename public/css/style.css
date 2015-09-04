@@ -102,6 +102,9 @@ background: darkmagenta;
 	margin: 0;
 	padding: 1em;
 }
+.text-facebook{
+	color: #293d69;
+}
 .well-gray{
 	background: #e3e3e3;
 	border-radius: 4px;
