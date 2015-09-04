@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Support\Facades\Redirect;
+use Singular\Entities\Profile;
 use Socialite;
 use Validator;
 use Singular\Entities\User;
@@ -113,13 +114,19 @@ class AuthController extends Controller
                 $r->password = $user->token;
                 $r->avatar = $user->getAvatar();
                 $r->role = 'editor';
-                if($r->genero == 'male'){
-                    $r->genero = 'hombre';
+                $r->save();
+
+                $p = new Profile();
+
+                if($r->genero == 'mujer'){
+                    $p->interes = 'hombre';
                 }
                 else{
-                    $r->genero = 'mujer';
+                    $p->interes = 'mujer';
                 }
-                $r->save();
+                $p->edad_min    = 18;
+                $p->edad_max    = 25;
+                $p->save();
 
                 \Auth::login($r);
             }
@@ -133,7 +140,7 @@ class AuthController extends Controller
 
             $q = User::where('password', $user->token)->first();
 
-            // dd($user);
+            //dd($user);
 
             if ($q) {
                 \Auth::login($q);
@@ -147,8 +154,21 @@ class AuthController extends Controller
                 $r->password = $user->token;
                 $r->avatar = $user->avatar_original;
                 $r->role = 'editor';
-
+                $r->genero = 'hombre';
                 $r->save();
+
+                $p = new Profile();
+                $p->user_id     = $r->id;
+                if($r->genero == 'hombre'){
+                    $p->interes     = 'mujer';
+                }
+                else{
+                    $p->interes     = 'hombre';
+                }
+                $p->edad_min    = 18;
+                $p->edad_max    = 25;
+                $p->descripcion = 'Escribe tus gustos :)';
+                $p->save();
 
                 \Auth::login($r);
 

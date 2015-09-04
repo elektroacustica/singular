@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Singular\Repositories\UserProfileRepo;
 use App\Http\Controllers\Controller;
+use Singular\Managers\ProfileManager;
 
 class UserController extends Controller
 {
@@ -29,12 +30,23 @@ class UserController extends Controller
 
     public function config()
     {
-        return view('user.configuracion');
+        $user = $this->userProfile->findProfile();
+        return view('user.configuracion', compact('user'));
     }
 
-    public function save()
+    public function update()
     {
+        $profile = $this->userProfile->putProfile();
 
+        $manager = new ProfileManager($profile, \Input::all());
+
+
+        if($manager->save())
+        {
+            return \Redirect::route('profile', \Auth::user()->name);
+        }
+
+        return $manager->getError();
     }
 
 }

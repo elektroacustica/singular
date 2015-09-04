@@ -20,8 +20,8 @@ class CreateProfilesTable extends Migration
                 ->onDelete('cascade')->unique();
             $table->integer('edad_min');
             $table->integer('edad_max');
-            $table->integer('educacion');
-            $table->integer('descripcion');
+            $table->enum('educacion', ['secundaria', 'preparatoria', 'maestria', 'doctorado', 'carrera']);
+            $table->text('descripcion');
             $table->date('fecha_nacimiento');
             $table->enum('interes', ['hombre', 'mujer', 'ambos']);
             $table->timestamps();

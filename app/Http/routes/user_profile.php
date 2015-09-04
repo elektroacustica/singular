@@ -8,5 +8,5 @@ Route::group(['namespace' => 'User'], function()
 
 	Route::get('configuracion', ['as' => 'user.config', 'uses' => 'UserController@config']);
 
-	Route::post('configuracion', ['as' => 'user.config', 'uses' => 'UserController@save']);
+	Route::put('configuracion', ['as' => 'user.config', 'uses' => 'UserController@update']);
 });

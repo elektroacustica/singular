@@ -14,8 +14,11 @@ class ProfileManager extends BaseManager
             'edad_min'  => 'required',
             'edad_max'  => 'required',
             'educacion' => 'required',
-            'descripcion'   => 'required',
+            'descripcion'        => 'required',
+            'fecha_nacimiento'   => 'required | date',
 
         ];
+
+        return $rules;
     }
 }

@@ -3,12 +3,13 @@
 namespace Singular\Repositories;
 
 use Singular\Entities\User;
+use Singular\Entities\Profile;
 
 class UserProfileRepo{
 	
-	public function person($value)
+	public function getModel()
 	{
-
+		return new Profile;
 	}
 
 	public function getNotCoincidence()
@@ -32,6 +33,17 @@ class UserProfileRepo{
 
 
 		return $data;
+	}
+
+	public function putProfile()
+	{
+		$profile = Profile::find(\Auth::user()->id);
+		return $profile;
+	}
+
+	public function findProfile()
+	{
+		return Profile::find(\Auth::user()->id);
 	}
 
 }
