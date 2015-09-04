@@ -69,11 +69,11 @@ class AuthController extends Controller
 
     public function redirectPath()
     {
-        return route('profile', \Auth::user()->name);
+        return route('configuracion');
     }
     public function loginPath()
     {
-        return route('login');
+        return route('user.profile');
     }
 
     public function redirectToProvider($provider)
@@ -123,7 +123,7 @@ class AuthController extends Controller
                 \Auth::login($r);
             }
 
-            return redirect()->route('cuestionario');
+            return route('user.profile');
             
         }
         elseif ($provider == 'twitter') {
@@ -152,7 +152,7 @@ class AuthController extends Controller
                 \Auth::login($r);
 
             }
-            return redirect()->route('cuestionario');
+            return route('user.profile');
         }
     }
 

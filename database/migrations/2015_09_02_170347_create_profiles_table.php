@@ -18,7 +18,10 @@ class CreateProfilesTable extends Migration
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade')->unique();
-            $table->string('descripcion');
+            $table->integer('edad_min');
+            $table->integer('edad_max');
+            $table->integer('educacion');
+            $table->integer('descripcion');
             $table->enum('interes', ['hombre', 'mujer', 'ambos']);
             $table->timestamps();
         });

@@ -5,41 +5,55 @@ button{
 button:focus{
 	outline: none;
 }
-form{
-	display: inline-block;
-}
-i{
-	margin-right: .5em;
-}
-.btn-facebook{
-	background: #293d69;
-	color: white;
-}
-.btn-twitter{
-	background: #1fbcec;
-	color: white;
-}
-.btn-singular{
-	background: #bc361e;
-	color: white;
-}
-.btn-create{
-	background: #00bf8f;
-	color: white;
-}
-.btn-facebook:hover,.btn-twitter:hover,.btn-singular:hover,.btn-create:hover{
-	opacity: .7;
-	color: white;
-}
-.component-form{
-    width: 100%;
-    background: darkmagenta;
-}
 figure{
 	box-shadow: .3em .3em 0 gray;
 }
+form{
+display: inline-block;
+}
+i{
+margin-right: .5em;
+}
+textarea{
+	width: 100%;
+}
+textarea:focus{
+	outline: none;
+	width: 90%;
+}
+strong{
+	margin-bottom: 2em;
+}
+.btn-facebook{
+background: #293d69;
+color: white;
+}
+.btn-twitter{
+background: #1fbcec;
+color: white;
+}
+.btn-singular{
+background: #bc361e;
+color: white;
+}
+.btn-create{
+background: #00bf8f;
+color: white;
+}
+.btn-facebook:hover,.btn-twitter:hover,.btn-singular:hover,.btn-create:hover{
+opacity: .7;
+color: white;
+}
+.component-form{
+width: 100%;
+background: darkmagenta;
+}
 .container{
 	margin-top: 8em;
+}
+.display-inline{
+	display: inline-block;
+	margin-right: 5em;
 }
 .img-avatar{
 	width: 400px;
@@ -88,4 +102,12 @@ figure{
 	margin: 0;
 	padding: 1em;
 }
-
+.well-gray{
+	background: #e3e3e3;
+	border-radius: 4px;
+}
+#chat{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}

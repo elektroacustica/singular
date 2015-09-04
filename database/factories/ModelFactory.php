@@ -11,12 +11,12 @@
 |
 */
 
-$factory->define(Singular\Entities\User::class, function ($fake) {
+$factory->define(Singular\Entities\User::class, function ($faker) {
     return [
-        'name' => $fake->name,
-        'email' => $fake->email,
+        'name' => $faker->name,
+        'email' => $faker->email,
         'password' => Hash::make('123'),
-        'avatar'	=> 'http://api.randomuser.me/portraits/women/'.$fake->unique()->numberBetween($min = 1, $max = 50).'.jpg',
+        'avatar'	=> 'http://api.randomuser.me/portraits/women/'.$faker->unique()->numberBetween($min =1, $max=50).'.jpg',
         'genero'	=> 'mujer',
         'local'     => 'veracruz',
         'remember_token' => str_random(10),
@@ -26,17 +26,12 @@ $factory->define(Singular\Entities\User::class, function ($fake) {
 
 $factory->define(Singular\Entities\Profile::class, function ($faker) {
     return [
-        'user_id'     => $faker->unique()->numberBetween($min = 5, $max = 30),
-        'descripcion' => 'Hola me gustan los chicos',
-        'interes'     => 'hombre'
-    ];
-});
-
-$factory->define(Singular\Entities\Configuration::class, function ($f) {
-    return [
-        'user_id'   => $f->unique()->numberBetween($min = 1, $max = 30),
-        'edad_min'  => 18,
-        'edad_max'  => 25
+        'user_id'     => rand(1, 50),
+        'descripcion' => 'Me gusta las peliculas de terror y pasear en bicicleta',
+        'interes'     => 'hombre',
+        'edad_min'    => 18,
+        'edad_max'    => 24,
+        'educacion'   => 'maestria'
     ];
 });
 

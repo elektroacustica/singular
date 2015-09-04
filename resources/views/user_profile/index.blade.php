@@ -17,7 +17,7 @@
 						{!! Form::hidden('candidato', $d->id) !!}
 						{!! Form::hidden('compatibility', 0) !!}
                     <button>
-                        <i class="fa fa-arrow-circle-o-down fa-5x text-danger"></i>
+						<i class="fa fa-times-circle-o fa-5x text-danger"></i>
                     </button>
                     {!! Form::close() !!}
 
