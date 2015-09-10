@@ -11,6 +11,12 @@ figure{
 i{
 margin-right: .5em;
 }
+input[type^="radio"]{
+	margin: 0 1em;
+}
+input[hide^="hide"]{
+	display: none;
+}
 textarea{
 	width: 100%;
 }
@@ -18,7 +24,7 @@ textarea:focus{
 	outline: none;
 	width: 90%;
 }
-section .form-group{
+section .form-group, .m-3{
 	margin: 3em 0;
 }
 .app-btn1{
@@ -120,6 +126,10 @@ background: darkmagenta;
 }
 .img-avatar:hover{
 	opacity: .6;
+}
+.line{
+	width: 100%;
+	border: .1em solid lightgrey;
 }
 .margin-right{
 	margin-right:.5em;

@@ -28,5 +28,15 @@ $(document).ready(function() {
 
 	}
 
+
+	/*seccion de mis intereses*/
+
+	$('#biografia').on('click', function (){
+		$('input[name^="descripcion"]').slideToggle();
+	});
+	$('#estado_civil').on('click', function (){
+		$('input[name^="estado_civil"]').slideToggle();
+	});
+
 	getGeolocation();
 });
