@@ -1,4 +1,8 @@
-@extends('user/base');
+@extends('user/base')
+
+@section('link')
+    <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.slider.min.css') }}">
+@stop
 
 @section('content')
 
@@ -39,37 +43,17 @@
                                         <label for="">Ambos</label>
                                 </div>
                             </section>
-                            <strong>BUSCAR POR EDAD</strong>
+                            <strong class="text-muted">EDAD</strong>
                             <section class="text-center">
                                 <div class="form-group">
-                                    <div class="form-group display-inline">
-                                        <label for="">Edad minima</label>
-                                        <select name="edad_min" class="form-control">
-                                            @for($x = 18; $x<70; $x++)
-                                                @if($user->edad_min == $x)
-                                                    <option selected="selected">{{ $x }}</option>
-                                                @else
-                                                    <option>{{ $x }}</option>
-                                                @endif
-                                            @endfor
-                                        </select>
-                                    </div>
-                                    <div class="form-group display-inline">
-                                        <label for="">Edad maxima</label>
-                                        <select name="edad_max" class="form-control">
-                                            @for($x = 18; $x<70; $x++)
-                                                @if($user->edad_max == $x)
-                                                <option selected="selected">{{ $x }}</option>
-                                                @else
-                                                    <option>{{ $x }}</option>
-                                                @endif
-                                            @endfor
-                                        </select>
+                                    <div class="form-group">
+                                        <b class="margin-right">18 </b>
+                                        <input id="ex2" type="text" class="span2" value="" data-slider-min="18" data-slider-max="45" data-slider-step="1" data-slider-value="[18,25]"/> <b>+45</b>
                                     </div>
                                 </div>
                             </section>
                             <section>
-                                <strong>GRADO DE EDUCACION</strong>
+                                <strong>Ubicacion</strong>
                                 <div class="form-group">
                                     @if($user->educacion == 'secundaria')
                                         secundaria <input type="radio" name="educacion" value="secundaria" checked/>
@@ -127,4 +111,9 @@
     </div>
     </div>
 
+@stop
+
+@section('script')
+    <script src="{{ asset('js/vendor/bootstrap.slider.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 @stop

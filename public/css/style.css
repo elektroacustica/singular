@@ -124,6 +124,9 @@ background: darkmagenta;
 .img-avatar:hover{
 	opacity: .6;
 }
+.margin-right{
+	margin-right:.5em;
+}
 .media{
 	background: #fefefe;
 	box-shadow: 1px 1px 1px gray;

@@ -60,10 +60,10 @@
 	</nav>
 
 	@yield('content')
-	@yield('script')
 
 	<script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	@yield('script')
 
 	<footer>
 	<!-- creditos <a href="http://www.freepik.com">Designed by Freepik</a> -->
