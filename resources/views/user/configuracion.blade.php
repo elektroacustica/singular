@@ -11,32 +11,32 @@
                     </div>
                     <div class="panel-body">
                         {!! Form::open(['route' => 'user.config', 'method' => 'PUT']) !!}
-                            <strong>INTERES</strong>
+                            <strong class=" text-muted">INTERES</strong>
                             <section class="text-center">
                                 <div class="form-group display-inline">
-                                    <label for="">Hombres</label>
                                     @if($user->interes == 'hombre')
                                         <input type="radio" name="interes" value="hombre" checked/>
                                     @else
                                         <input type="radio" name="interes" value="hombre" />
                                     @endif
+                                        <label for="">Hombres</label>
 
                                 </div>
                                 <div class="form-group display-inline">
-                                    <label for="">Mujeres</label>
                                     @if($user->interes == 'mujer')
                                         <input type="radio" name="interes" value="mujer" checked/>
                                     @else
                                         <input type="radio" name="interes" value="mujer" />
                                     @endif
+                                        <label for="">Mujeres</label>
                                 </div>
                                 <div class="form-group display-inline">
-                                    <label for="">Ambos</label>
                                     @if($user->interes == 'ambos')
                                         <input type="radio" name="interes" value="ambos" checked/>
                                     @else
                                         <input type="radio" name="interes" value="ambos" />
                                     @endif
+                                        <label for="">Ambos</label>
                                 </div>
                             </section>
                             <strong>BUSCAR POR EDAD</strong>
