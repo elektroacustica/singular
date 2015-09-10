@@ -1,3 +1,5 @@
 $(document).ready(function() {
-	$("#ex2").slider({});
+	$("#ex2").slider({
+		tooltip: 'always'
+	});
 });
