@@ -9,13 +9,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        Configuracion
-                    </div>
+
                     <div class="panel-body">
                         {!! Form::open(['route' => 'user.config', 'method' => 'PUT']) !!}
-                            <strong class=" text-muted">INTERES</strong>
+                            <p class=" text-muted">INTERES</p>
                             <section class="text-center">
                                 <div class="form-group display-inline">
                                     @if($user->interes == 'hombre')
@@ -43,7 +40,7 @@
                                         <label for="">Ambos</label>
                                 </div>
                             </section>
-                            <strong class="text-muted">EDAD</strong>
+                            <p class="text-muted">EDAD</p>
                             <section class="text-center">
                                 <div class="form-group">
                                     <div class="form-group">
@@ -53,43 +50,22 @@
                                 </div>
                             </section>
                             <section>
-                                <strong>Ubicacion</strong>
+                                <p class="text-muted">UBICACION</p>
                                 <div class="form-group">
-                                    @if($user->educacion == 'secundaria')
-                                        secundaria <input type="radio" name="educacion" value="secundaria" checked/>
-                                    @else
-                                        secundaria <input type="radio" name="educacion" value="secundaria" />
-                                    @endif
-
-                                    @if($user->educacion == 'preparatoria')
-                                        preparatoria <input type="radio" name="educacion" value="preparatoria" checked/>
-                                    @else
-                                        preparatoria <input type="radio" name="educacion" value="preparatoria" />
-                                    @endif
-
-                                    @if($user->educacion == 'carrera')
-                                        carrera <input type="radio" name="educacion" value="carrera" checked/>
-                                    @else
-                                        carrera <input type="radio" name="educacion" value="carrera" />
-                                    @endif
-
-                                    @if($user->educacion == 'maestria')
-                                        maestria <input type="radio" name="educacion" value="maestria" checked/>
-                                    @else
-                                        maestria <input type="radio" name="educacion" value="maestria" />
-                                    @endif
-
-                                    @if($user->educacion == 'doctorado')
-                                        doctorado <input type="radio" name="educacion" value="doctorado" checked/>
-                                    @else
-                                        doctorado <input type="radio" name="educacion" value="doctorado" />
-                                    @endif
+                                    <select name="" class="form-control">
+                                        <option value="" selected disabled>Pais</option>
+                                        <option value=""></option>
+                                    </select> 
                                 </div>
-                                <strong>ESCRIBE UNA DESCRIPCION SOBRE TI</strong>
                                 <div class="form-group">
-                                    <textarea name="descripcion">
-                                        {{ $user->descripcion }}
-                                    </textarea>
+                                    <select name="" class="form-control">
+                                        <option selected disabled>ciudad</option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group text-center">
+                                    <i class="fa fa-map-marker fa-2x text-primary"></i> localizar
+                                    <p id="localizacion"></p>
                                 </div>
                             </section>
                             <strong>FECHA DE NACIMIENTO</strong>
@@ -105,15 +81,15 @@
 
                         {!! Form::close() !!}
                     </div>
-                </div>
+
             </div>
         </div>
-    </div>
     </div>
 
 @stop
 
 @section('script')
     <script src="{{ asset('js/vendor/bootstrap.slider.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=true"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 @stop

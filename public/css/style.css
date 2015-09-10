@@ -8,9 +8,6 @@ button:focus{
 figure{
 	box-shadow: .3em .3em 0 gray;
 }
-form{
-display: inline-block;
-}
 i{
 margin-right: .5em;
 }
@@ -21,8 +18,8 @@ textarea:focus{
 	outline: none;
 	width: 90%;
 }
-strong{
-	margin-bottom: 2em;
+section .form-group{
+	margin: 3em 0;
 }
 .app-btn1{
 	background-color: white;
@@ -95,7 +92,7 @@ background: darkmagenta;
 	margin-top: 8em;
 }
 .display-inline{
-	display: inline-block;
+	display: inline;
 	margin-right: 1em;
 }
 .img-avatar{
