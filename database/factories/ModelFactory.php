@@ -27,12 +27,15 @@ $factory->define(Singular\Entities\User::class, function ($faker) {
 $factory->define(Singular\Entities\Profile::class, function ($faker) {
     return [
         'user_id'     => rand(1, 50),
-        'descripcion' => 'Me gusta las peliculas de terror y pasear en bicicleta',
         'interes'     => 'hombre',
         'edad_min'    => 18,
         'edad_max'    => 24,
+        'pais'        => 'MX',
+        'ciudad'      => 'Veracruz',
+        'geolocalizacion'    => 'san andres tuxtla',
+        'descripcion'       => 'Hola :) actualmente estudiando ;)',
+        'estado_civil'      => 'Soltera',
         'fecha_nacimiento'  => $faker->date($format = 'Y-m-d', $max = '1993'),
-        'educacion'   => 'maestria'
     ];
 });
 

@@ -31,7 +31,9 @@ class UserController extends Controller
     public function config()
     {
         $user = $this->userProfile->findProfile();
-        return view('user.configuracion', compact('user'));
+        $pais = \DB::select('select * from paises');
+        $ciudad = \DB::select('select * from ciudades where pais_id = ? limit 500', ['mx']);
+        return view('user.configuracion', compact('user', 'ciudad', 'pais'));
     }
 
     public function update()

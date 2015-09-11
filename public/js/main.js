@@ -6,9 +6,12 @@ $(document).ready(function() {
 		tooltip: 'always'
 	});
 
-	$('.fa .fa-map-marker').on('click', function () {
+	//geolocalizacion
+
+	$('#geolocalizacion').on('click', function () {
+		$('#localizacion').html('')
 		getGeolocation();
-		console.log('lod');
+
 	});
 
 	function getGeolocation(){
@@ -21,12 +24,14 @@ $(document).ready(function() {
 		setTimeout(
 			geocoder.geocode({location: {lat: lat, lng: lon}}, function(res, status){
 				var localizacion = res[0].formatted_address;
+				$('input[name^="geolocalizacion"]').val(localizacion)
 				$('#localizacion').prepend(localizacion)
 
 			})
 		,3000);
 
 	}
+
 
 
 	/*seccion de mis intereses*/

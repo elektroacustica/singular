@@ -14,16 +14,18 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade')->unique();
+            $table->enum('interes', ['hombre', 'mujer', 'ambos']);
             $table->integer('edad_min');
             $table->integer('edad_max');
-            $table->enum('educacion', ['secundaria', 'preparatoria', 'maestria', 'doctorado', 'carrera']);
+            $table->string('pais');
+            $table->string('ciudad');
+            $table->string('geolocalizacion');
             $table->text('descripcion');
-            $table->date('fecha_nacimiento');
-            $table->enum('interes', ['hombre', 'mujer', 'ambos']);
+            $table->string('estado_civil');
+            $table->string('fecha_nacimiento')->nullable();
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unique();
             $table->timestamps();
         });
     }

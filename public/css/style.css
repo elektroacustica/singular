@@ -90,6 +90,9 @@ color: white;
 opacity: .7;
 color: white;
 }
+form{
+	display: inline;
+}
 .component-form{
 width: 100%;
 background: darkmagenta;

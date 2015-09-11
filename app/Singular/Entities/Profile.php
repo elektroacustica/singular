@@ -10,9 +10,9 @@ class Profile extends Model
 
     protected $fillable = [
         'user_id', 'interes',
-        'edad_min','edad_max',
-        'estidios', 'descripcion',
-        'fecha_nacimiento', 'educacion'
+        'edad_min','edad_max', 'pais',
+        'ciudad', 'geolocalizacion', 'descripcion',
+        'estado_civil', 'fecha_nacimiento'
     ];
 
     public function user()

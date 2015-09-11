@@ -10,13 +10,13 @@ class ProfileManager extends BaseManager
     {
         $rules = [
             'user_id'   => 'required',
-            'interes'   => 'required',
             'edad_min'  => 'required',
             'edad_max'  => 'required',
-            'educacion' => 'required',
-            'descripcion'        => 'required',
-            'fecha_nacimiento'   => 'required | date',
-
+            'pais'      => 'required',
+            'ciudad'    => 'required',
+            'geolocalizacion'   => 'required',
+            'descripcion'       => 'required',
+            'estado_civil'      => 'required',
         ];
 
         return $rules;

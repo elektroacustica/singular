@@ -43,7 +43,15 @@ class UserProfileRepo{
 
 	public function findProfile()
 	{
-		return Profile::find(\Auth::user()->id);
+		$profile = \DB::select
+		(
+			'select * from users
+			join profiles
+				on users.id = profiles.user_id
+			where users.id = ?',
+			[\Auth::user()->id]
+		);
+		return $profile;
 	}
 
 }
